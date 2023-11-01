@@ -79,9 +79,10 @@ class HomeScreen extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.all(10),
                     child: const Text(
-                      'Hi, Maria Fadilla',
+                      'Hi, MARIA FADILLA',
                       style: TextStyle(
-                        color: Color.fromARGB(255, 19, 2, 2), //none
+                        color: Color.fromARGB(255, 255, 255, 255),
+                        fontSize: 18,
                       ),
                     ),
                   ),
@@ -179,7 +180,7 @@ class HomeScreen extends StatelessWidget {
                   Container(
                     width: 80,
                     child: const Column(children: [
-                      Icon(Icons.money),
+                      Icon(Icons.send_to_mobile_outlined ),
                       Text("Send Money"),
                     ]),
                   ),
@@ -193,7 +194,7 @@ class HomeScreen extends StatelessWidget {
                   Container(
                     width: 80,
                     child: const Column(children: [
-                      Icon(Icons.airplane_ticket_outlined),
+                      Icon(Icons.widgets_outlined),
                       Text("See All"),
                     ]),
                   ),
