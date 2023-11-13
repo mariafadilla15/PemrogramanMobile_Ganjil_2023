@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'history.dart';
+import 'pay.dart';
+import 'inbox.dart';
+import 'account.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Home());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 225, 223, 223),
+      backgroundColor: const Color.fromARGB(255, 241, 241, 241),
       body: Stack(
         children: [
           ListView(
@@ -684,13 +687,19 @@ class Navbar extends StatelessWidget {
             type: BottomNavigationBarType.fixed,
             selectedFontSize: 12,
             currentIndex: _navbarIndex,
-            selectedItemColor: Colors.red,
+            selectedItemColor: const Color.fromARGB(255, 244, 0, 0),
             unselectedItemColor: const Color.fromARGB(255, 0, 0, 0),
             onTap: (index) {
               if (index == 0) {
-                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()));
               } else if (index == 1) {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => const History()));
+              } else if (index == 2) {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const Pay()));
+              } else if (index == 3) {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const Inbox()));
+              } else if (index == 4) {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const Account()));
               }
             },
             items: [
@@ -698,23 +707,24 @@ class Navbar extends StatelessWidget {
               itemBar(Icons.sticky_note_2_outlined, "History"),
               BottomNavigationBarItem(
                 icon: SizedBox(
-                  width: 28,
-                  height: 28,
+                  width: 50,
+                  height: 50,
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: const Color.fromARGB(255, 244, 0, 0),
                       shape: BoxShape.rectangle,
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     child: const Center(
                       child: Icon(
-                        Icons.qr_code,
-                        color: Colors.white,
-                      ),
+                            Icons.qr_code,
+                            size: 45,
+                            color: Colors.white,
+                          ),
                     ),
                   ),
                 ),
-                label: "Bayar",
+                label: "Pay",
               ),
               itemBar(Icons.mail_outlined, "Inbox"),
               itemBar(Icons.account_circle_outlined, "Account"),
