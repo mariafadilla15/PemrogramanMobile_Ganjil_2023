@@ -34,6 +34,7 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 241, 241, 241),
       body: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.white,
@@ -83,9 +84,9 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.network(
-                    'https://cdn.linkaja.com/website/asset/400.png',
-                    width: 300,
+                  Image.asset(
+                    'assets/pending.png',
+                    width: 220,
                     height: 200,
                   ),
                   const SizedBox(height: 0),
@@ -113,25 +114,82 @@ class _HistoryState extends State<History> with SingleTickerProviderStateMixin {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
-                    child: const ListTile(
-                      leading: Icon(Icons.check_circle, color: Colors.green),
-                      title: Text('Kirim ke Bank'),
-                      subtitle: Text('Bank BRI 357897535\nWAVIANDRA XAVIERO\nRp 100.000\n\n10 November 2023 20:51:22'),
-                      trailing: Text('Berhasil', style: TextStyle(color: Colors.green)),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(minHeight: 100), 
+                      child: const Center(
+                        child: ListTile(
+                          leading: Icon(Icons.check_circle, color: Colors.green),
+                          title: Text('Direct Debit'),
+                          subtitle: Text('06 November 2023, 14:07:34\nPT.GRAB fXKHGO93YD2OIrUgl8zBTs'),
+                          trailing: Text('Rp 9.000', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                        ),
+                      ),
                     ),
                   ),
-                  const SizedBox(height: 10), 
                   Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
-                    child: const ListTile(
-                      leading: Icon(Icons.check_circle, color: Colors.green),
-                      title: Text('Bayar Merchant'),
-                      subtitle: Text('085695432589\nWARUNG SIMBAH\nRp 20.000\n\n22 Apr 2020 13:33:47'),
-                      trailing: Text('Berhasil', style: TextStyle(color: Colors.green)),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(minHeight: 100),
+                      child: const Center(
+                        child: ListTile(
+                          leading: Icon(Icons.check_circle, color: Colors.green),
+                          title: Text('Refund'),
+                          subtitle: Text('06 November 2023 14:07:33\nPT.GRAB 6285695432589'),
+                          trailing: Text('Rp 9.000', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                        ),
+                      ),
                     ),
-                  ),
+                  ), 
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(minHeight: 100), 
+                      child: const Center(
+                        child: ListTile(
+                          leading: Icon(Icons.check_circle, color: Colors.green),
+                          title: Text('Reserved'),
+                          subtitle: Text('06 November 2023 13:58:03\nPT.GRAB IkMB3u3jS9eR1rHHOOwTTg'),
+                          trailing: Text('Rp 9.000', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                    ),
+                  ), 
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(minHeight: 100), 
+                      child: const Center(
+                        child: ListTile(
+                          leading: Icon(Icons.check_circle, color: Colors.green),
+                          title: Text('Kirim ke Bank'),
+                          subtitle: Text('01 November 2023 20:51:22\nBank BRI 357897535\nWAVIANDRA XAVIERO'),
+                          trailing: Text('Rp 100.000', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                    ),
+                  ), 
+                  Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(minHeight: 100), 
+                      child: const Center(
+                        child: ListTile(
+                          leading: Icon(Icons.check_circle, color: Colors.green),
+                          title: Text('Bayar Merchant'),
+                          subtitle: Text('15 Oktober 2023 13:33:47\nWARUNG SIMBAH 6285695432589'),
+                          trailing: Text('Rp 20.000', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                        ),
+                      ),
+                    ),
+                  ), 
                 ],
               ),
             ),
